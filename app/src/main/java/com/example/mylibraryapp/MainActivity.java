@@ -12,6 +12,9 @@ public class MainActivity extends AppCompatActivity {
     int i = 0;
 
     TextView labelOnboard;
+    TextView lblFirstName;
+    TextView lblLastName;
+    TextView lblEmail;
     EditText txtFirstName;
     EditText txtLastName;
     EditText txtEmail;
@@ -23,20 +26,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         labelOnboard = findViewById(R.id.textView);
+        txtFirstName = findViewById(R.id.editTextFirstName);
+        txtLastName = findViewById(R.id.editTextLastName);
+        txtEmail = findViewById(R.id.editTextEmail);
+        lblFirstName = findViewById(R.id.lblFirstName);
+        lblLastName = findViewById(R.id.lblLastName);
+        lblEmail = findViewById(R.id.lblEmail);
         btnSubmit = findViewById(R.id.buttonSubmit);
-        txtFirstName = findViewById(R.id.editTextPersonName);
 
         labelOnboard.setText("My Books");
         txtFirstName.setText("");
+        txtLastName.setText("");
+        txtEmail.setText("");
+        txtFirstName.setText("");
+        txtLastName.setText("");
+        txtEmail.setText("");
+        lblFirstName.setText("First Name: ");
+        lblLastName.setText("Last Name: ");
+        lblEmail.setText("Email: ");
         btnSubmit.setText("Submit");
     }
 
     public void onButtonClick(View sender) {
-        ++i;
-        if (i%2 == 0) {
-            labelOnboard.setText(txtFirstName.getText().toString() + " Hello!");
-        } else {
-            labelOnboard.setText("Hello " + txtFirstName.getText().toString());
-        }
+//        ++i;
+//        if (i%2 == 0) {
+//            labelOnboard.setText(txtFirstName.getText().toString() + " Hello!");
+//        } else {
+//            labelOnboard.setText("Hello " + txtFirstName.getText().toString());
+//        }
+        lblFirstName.setText("First Name: " + txtFirstName.getText().toString());
+        lblLastName.setText("Last Name: " + txtLastName.getText().toString());
+        lblEmail.setText("Email: " + txtEmail.getText().toString());
     }
 }
